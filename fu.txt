@@ -1,1 +1,62 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    while(1){
+    char k[100], j[100], realk[100], realj[100];
+    char x[10]= "Helloww ";
+    printf("    Enter string 1>>>");
+    fgets(k, sizeof(k), stdin);
+    k[strcspn(k, "\n")]= '\0';
+    printf("    Enter string 2>>>");
+    fgets(j, sizeof(j), stdin);
+    j[strcspn(j, "\n")]= '\0';
+    strcpy(realk, k);
+    strcpy(realj, j);
+   
+    
+    printf("\t\t\t [LENGTH]\n");
+    int len1= strlen(k), len2= strlen(j);
+    printf("    Length of 1st String: %d\n", len1);
+    printf("    Length of 2nd String: %d\n\n", len2);
+    
+   
+    
+    
+    printf("\t\t\t [EQUALITY]\n");
+    if(strcmp(k, j)==0) printf("    Strings are Equal\n\n");
+    else printf("    Strings are Not equal\n\n");
+    
+    
+    
+    printf("\t\t\t [REVERSE]\n");
+    for(int i=0; i<(len1/2); i++){
+        char temp= realk[i];
+        realk[i]= realk[len1-i-1];
+        realk[len1-i-1]= temp;
+        }
+        printf("    %s\n", realk);
+    for(int i=0; i<(len2/2); i++){
+        char temp= realj[i];
+        realj[i]= realj[len2-i-1];
+        realj[len2-i-1]= temp;
+        }
+        printf("    %s\n\n", realj);
+    
+    
+    printf("\t\t [COPYING 1st INTO ANOTHER]\n");
+    strcat(x, k);
+    printf("    %s\n\n", x);
+    
+    
+    printf("\t\t\t [MERGING]\n");
+    strcat(k, " ");
+    strcat(k, j);
+    printf("    %s\n\n", k);
+    
+    
+    
+    }
+}
+
+
 
